@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="products.js" defer></script>
+  <title>Products</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ message }} (count: {{ products.length }})</h1>
+    <div>
+      Name: <input type="text" v-model="productName">
+      Price: <input type="text" v-model="productPrice">
+      Description: <input type="text" v-model="productDesc">
+      Image URL: <input type="text" v-model="productImgUrl">
+      <button v-on:click="createProduct()">Create Product</button>
+    </div>
+    <div v-for="product in products">
+      <h3>{{ product.name }}</h3>
+      <img :src="product.image_url" alt="Product Image" style="max-width:200px;">
+      <p>{{ product.price }}</p>
+      <button v-on:click="deleteProduct(product.id)">Delete</button>
+    </div>
+  </div>
+</body>
+</html>

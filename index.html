@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="index.js" defer></script>
+   
+  </head>
+
+  <body>
+    <h1>{Hello from HTML!}</h1>
+    <div id="app">
+        <button @click="count++">Count is: {{ count }}</button>
+        {{ message }}
+     <div>
+       <button @click="changeMessage()">Click Me</button>
+       <input type="text" v-model="name">
+     </div>
+    </div>
+  </body>
+</html>
+
